@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Terminal } from '@xterm/xterm';
+import { FitAddon } from '@xterm/addon-fit';
 import '@xterm/xterm/css/xterm.css';
 import io from 'socket.io-client';
 
@@ -10,8 +11,13 @@ const TerminalComponent2 = () => {
   useEffect(() => {
     // Create a new terminal instance
     const term = new Terminal({ cursorBlink: true });
+    const fitAddon = new FitAddon();
+    term.loadAddon(fitAddon);
+    // Open the terminal in #terminal-container
     term.open(terminalRef.current);
-    term.writeln('Welcome to the Web Terminal!');
+    // Make the terminal's size and geometry fit the size of #terminal-container
+    fitAddon.fit();
+    // term.writeln('Welcome to the Web Terminal!');
 
     // Connect to the backend server
     socketRef.current = io.connect('http://10.130.151.162:8080');
@@ -26,6 +32,14 @@ const TerminalComponent2 = () => {
     socketRef.current.on('data', data => {
       term.write(data);
     });
+
+    // Function to handle terminal resize
+    const handleResize = () => {
+        fitAddon.fit();
+    };
+
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
 
     return () => {
       // Cleanup function

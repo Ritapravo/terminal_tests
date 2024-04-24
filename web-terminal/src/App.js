@@ -1,5 +1,5 @@
 import React from 'react';
-import TerminalComponent from './terminal';
+// import TerminalComponent from './terminal';
 import TerminalComponent2 from './Terminal2';
 
 const App = () => {
