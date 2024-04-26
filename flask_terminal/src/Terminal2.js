@@ -22,6 +22,11 @@ const TerminalComponent2 = () => {
     // Connect to the backend server
     socketRef.current = io.connect('http://10.130.151.162:8080');
 
+    // Join room based on session ID
+    socketRef.current.on('connect', () => {
+      socketRef.current.emit('join_room', socketRef.current.id);
+    });
+
     // Handle user input from the terminal
     term.onData(e => {
       // Send input to the backend server via Socket.IO
@@ -38,7 +43,7 @@ const TerminalComponent2 = () => {
 
     // Function to handle terminal resize
     const handleResize = () => {
-        fitAddon.fit();
+      fitAddon.fit();
     };
 
     // Add event listener for window resize
