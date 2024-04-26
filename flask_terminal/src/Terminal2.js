@@ -30,14 +30,14 @@ const TerminalComponent2 = () => {
     // Handle user input from the terminal
     term.onData(e => {
       // Send input to the backend server via Socket.IO
-      console.log("e ============", e);
+      // console.log("e ============", e);
 
       socketRef.current.emit('data', e);
     });
 
     // Receive data from the backend server and write it to the terminal
     socketRef.current.on('data', data => {
-      console.log("data ============", data);
+      // console.log("data ============", data);
       term.write(data);
     });
 
