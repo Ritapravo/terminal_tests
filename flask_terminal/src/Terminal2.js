@@ -20,7 +20,7 @@ const TerminalComponent2 = () => {
     // term.writeln('Welcome to the Web Terminal!');
 
     // Connect to the backend server
-    socketRef.current = io.connect('http://10.130.151.162:8080');
+    socketRef.current = io.connect('http://10.130.151.162:8080/terminal');
 
     // Join room based on session ID
     socketRef.current.on('connect', () => {
