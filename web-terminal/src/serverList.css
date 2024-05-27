@@ -1,0 +1,96 @@
+.container {
+    font-family: Arial, sans-serif;
+    padding: 20px 0;
+    background-color: #37474f;
+    /* Main background color */
+    color: #fff;
+    /* Text color */
+    height: 100vh;
+    text-align: center;
+}
+
+.welcome-text {
+    font-size: 4vw;
+    margin-top: 10vh;
+    font-family: Georgia, serif;
+}
+
+
+
+
+.container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.container li {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+    /* Darker border color */
+}
+
+.container li:hover {
+    background-color: #4f4f4f;
+    /* Darker hover background color */
+    cursor: pointer;
+}
+
+.center {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    /* height: 100vh;  */
+}
+.add-connection {
+    margin-top: 20px;
+    /* padding: 20px 20px; */
+    width: 50vw;
+    border: none;
+    border-radius: 10px;
+    background-color: #cacaca;
+    /* Green button color */
+    color: #161313;
+    /* White button text color */
+    cursor: pointer;
+    font-family: Georgia, serif;
+
+}
+
+
+.add-connection:hover {
+    background-color: #b6b6b6;
+    /* Darker green button hover color */
+}
+
+.add-connection h3{
+    font-size: 1.5vw;
+    margin: 1.2vw 0; 
+}
+
+.saved-connections-text{
+    font-size: 2vw;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-family: Georgia, serif;
+}
+
+.server-list{
+    width:100%;
+    margin: 0% 0% 0% 0%;
+    /* padding: 0% 10% 0% 10%; */
+}
+
+.saved-server{
+    width:24%;
+    margin: 1% 5% 1% 5%;
+    padding: 5px 0%;
+    border: none;
+    border-radius: 10px;
+    background-color: #cacaca;
+    /* Green button color */
+    color: #161313;
+    /* White button text color */
+    cursor: pointer;
+    font-family: Georgia, serif;
+    display: inline-block;
+}
